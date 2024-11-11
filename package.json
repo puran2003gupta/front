@@ -3,13 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@react-pdf-viewer/core": "^3.12.0",
+    "@react-pdf-viewer/default-layout": "^3.12.0",
+    "@react-pdf-viewer/zoom": "^3.12.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
+    "pdfjs-dist": "^2.12.313",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-pdf": "^5.7.2",
     "react-scripts": "5.0.1",
-    "web-vitals": "^2.1.4"
+    "socket.io-client": "^4.8.1",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.76.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -34,5 +41,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "ajv": "^7.2.4"
   }
 }

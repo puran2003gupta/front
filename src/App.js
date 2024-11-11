@@ -1,25 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
-
+import React, { useState } from 'react';
+import PDFViewer from './PDFViewer';
+import './PDFViewer.css'; 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [isAdmin, setIsAdmin] = useState(true); 
+    const pdfUrl = "/Research.pdf"; 
+
+    return (
+        <div>
+            <h1>Real-Time PDF Co-Viewer</h1>
+            <h4>Made by Puran kumar gupta (21BCE2877)</h4>
+            <PDFViewer pdfUrl={pdfUrl} isAdmin={isAdmin} />
+            <div className='pdf-navigation'>
+              <button  onClick={() => setIsAdmin(!isAdmin)}>
+                  Toggle Role: {isAdmin ? 'Admin' : 'Viewer'}
+              </button>
+            </div>
+        </div>
+    );
 }
 
 export default App;
