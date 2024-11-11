@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import { Document, Page, pdfjs } from 'react-pdf';
+import { Document, Page } from 'react-pdf';
 import io from 'socket.io-client';
 import * as pdfjsWorker from 'pdfjs-dist/build/pdf.worker.entry';
-import './PDFViewer.css'; 
+import { pdfjs } from 'react-pdf';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.13.216/pdf.worker.min.js`;
-
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.js',
+  import.meta.url,
+).toString();
 const socket = io('https://server-dzcy.onrender.com');
 
 function PDFViewer({ pdfUrl, isAdmin }) {
